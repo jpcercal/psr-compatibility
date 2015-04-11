@@ -1,0 +1,19 @@
+hwi_oauth_connect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+    prefix:   /
+
+hwi_oauth_login:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix:   /login
+
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /connect
+
+github_login:
+    pattern:  /login/check-github
+
+fos_user_security_logout:
+    pattern:  /logout
+    defaults:
+        _controller: FOSUserBundle:Security:logout
