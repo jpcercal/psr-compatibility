@@ -76,3 +76,20 @@ fos_user:
     db_driver:              orm
     firewall_name:          main
     user_class:             Cekurte\Psr\CompatibilityBundle\Entity\User
+
+hwi_oauth:
+    # name of the firewall in which this bundle is active, this setting MUST be set
+    firewall_name:          main
+    target_path_parameter:  _target_path
+    fosub:
+        username_iterations: 30
+        properties:
+            github:         githubId
+    connect:
+        account_connector:  oauth_custom_user_provider
+    resource_owners:
+        github:
+            type:               github
+            client_id:          %github_client_id%
+            client_secret:      %github_client_secret%
+            scope:              "user:email,public_repo"
