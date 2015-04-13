@@ -17,9 +17,11 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
+            new Bazinga\Bundle\JsTranslationBundle\BazingaJsTranslationBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new Cekurte\ComponentBundle\CekurteComponentBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
             new Cekurte\Psr\CompatibilityBundle\CekurtePsrCompatibilityBundle(),
         );

@@ -18,6 +18,12 @@ hwi_oauth_redirect:
 github_login:
     pattern:  /login/check-github
 
+_bazinga_jstranslation:
+    resource: "@BazingaJsTranslationBundle/Resources/config/routing/routing.yml"
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
 fos_user_security_logout:
     pattern:  /logout
     defaults:

@@ -34,7 +34,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ ]
+    bundles:        [ CekurtePsrCompatibilityBundle ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -93,3 +93,7 @@ hwi_oauth:
             client_id:          %github_client_id%
             client_secret:      %github_client_secret%
             scope:              "user:email,public_repo"
+
+bazinga_js_translation:
+    locale_fallback:      en
+    default_domain:       messages
