@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="psrApp" lang="{{ app.request.locale }}">
+<head>
+    <title>{{ "{{ app.title }}" }}</title>
+
+    <meta charset="UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/dist/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/cekurtepsrcompatibility/css/app.css') }}">
+
+    {% javascripts
+    'bundles/bazingajstranslation/js/translator.min.js'
+    'js/translations/config.js'
+    'js/translations/messages/en.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+
+    <script src="{{ asset('vendor/angular/angular.js') }}"></script>
+    <script src="{{ asset('vendor/angular-route/angular-route.js') }}"></script>
+    <script src="{{ asset('vendor/angular-resource/angular-resource.js') }}"></script>
+    <script src="{{ asset('vendor/angular-sanitize/angular-sanitize.js') }}"></script>
+
+    <script src="{{ asset('bundles/cekurtepsrcompatibility/js/app.js') }}"></script>
+    <script src="{{ asset('bundles/cekurtepsrcompatibility/js/controllers.js') }}"></script>
+    <script src="{{ asset('bundles/cekurtepsrcompatibility/js/services.js') }}"></script>
+    <script src="{{ asset('bundles/cekurtepsrcompatibility/js/filters.js') }}"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/">PSR Compatibility</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav" ng-repeat="item in app.nav.menu">
+                    <li><a href="{{ "{{ item.href }}" }}">{{ "{{ item.label|trans }}" }}</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div ng-view></div>
+</body>
+</html>

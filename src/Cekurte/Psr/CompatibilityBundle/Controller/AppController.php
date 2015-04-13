@@ -2,21 +2,20 @@
 
 namespace Cekurte\Psr\CompatibilityBundle\Controller;
 
-use Cekurte\ComponentBundle\HttpFoundation\SerializedResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
-class HomeController extends Controller
+class AppController extends Controller
 {
     /**
-     * @Route("/home", name="home", options={"expose"=true})
+     * @Route("/", name="app")
      * @Method("GET")
+     * @Template()
      */
     public function indexAction()
     {
-        return new SerializedResponse(array(
-            'home' => 'Home'
-        ));
+        return array();
     }
 }
